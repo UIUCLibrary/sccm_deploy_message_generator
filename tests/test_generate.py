@@ -46,8 +46,7 @@ deployment:
 """
 @pytest.fixture(scope="session")
 def yml_file(tmpdir_factory):
-    tmp_yml_file = tmpdir_factory.mktemp("sample").join("sample.yml")
-    print(tmp_yml_file)
+    tmp_yml_file = str(tmpdir_factory.mktemp("sample").join("sample.yml"))
     with open(tmp_yml_file, "w", encoding="utf8") as w:
         w.write(yml_data)
     return str(tmp_yml_file)
