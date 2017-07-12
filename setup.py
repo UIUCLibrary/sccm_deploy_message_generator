@@ -4,7 +4,7 @@ setup(
     name='deploy_message',
     version='0.0.1',
     packages=['deploy_message'],
-    url='',
+    url='https://github.com/UIUCLibrary/sccm_deploy_message_generator',
     license='',
     install_requires=["PyYAML", "Jinja2"],
     author='University of Illinois at Urbana Champaign',
