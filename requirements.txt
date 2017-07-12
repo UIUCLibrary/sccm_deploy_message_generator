@@ -1,0 +1,5 @@
+pytest
+tox
+PyYAML
+Jinja2
+mypy
