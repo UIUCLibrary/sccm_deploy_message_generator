@@ -1,5 +1,8 @@
 import argparse
 import copy
+
+import sys
+
 from .generate import get_message_data, generate_message
 
 
@@ -43,7 +46,12 @@ def main():
     args.settings.close()  # FileType opens the file but there is need for that. Just need the file name
     original_message_data = get_message_data(args.settings.name)
     updated_message_data = update_message(original_message_data, args)
-    message = generate_message(updated_message_data)
+    try:
+        message = generate_message(updated_message_data)
+    except TypeError:
+        print("Unable to build message because {} contains errors.".format(args.settings.name), file=sys.stderr)
+        exit(sys.exit(1))
+
 
     if args.save:
         args.save.write(message)
