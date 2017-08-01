@@ -10,4 +10,5 @@ deploy:
   api_key: $GITHUB_OAUTH_TOKEN
   skip_cleanup: true
   on:
+    repo: UIUCLibrary/sccm_deploy_message_generator
     tags: true
