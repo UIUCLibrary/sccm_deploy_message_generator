@@ -3,7 +3,7 @@ import copy
 
 import sys
 
-from .generate import get_message_data, generate_message, get_footer
+from .generate import get_message_data, generate_body, get_footer
 
 
 def get_parser():
@@ -47,7 +47,7 @@ def main():
     original_message_data = get_message_data(args.settings.name)
     updated_message_data = update_message(original_message_data, args)
     try:
-        body = generate_message(updated_message_data)
+        body = generate_body(updated_message_data)
         footer = get_footer()
         message = "{}\n\n\n{}".format(body, footer)
     except TypeError:
