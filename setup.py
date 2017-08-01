@@ -1,15 +1,27 @@
 from setuptools import setup
+import os
+
+metadata = {}
+metadata_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'deploy_message', '__version__.py')
+
+with open(metadata_file, 'r', encoding='utf-8') as f:
+    exec(f.read(), metadata)
+with open('README.rst', 'r', encoding='utf-8') as readme_file:
+    readme = readme_file.read()
 
 setup(
-    name='deploy_message',
-    version='0.0.2',
+    name=metadata["__title__"],
+    version=metadata["__version__"],
     packages=['deploy_message'],
-    url='https://github.com/UIUCLibrary/sccm_deploy_message_generator',
-    license='',
+    url=metadata["__url__"],
+    license=metadata["license_"],
     install_requires=["PyYAML", "Jinja2"],
-    author='University of Illinois at Urbana Champaign',
-    author_email='hborcher@illinois.edu',
-    description='Generates the message required for deployment',
+    author=metadata["__author__"],
+    author_email=metadata["__author_email__"],
+    maintainer=metadata["maintainer"],
+    maintainer_email=metadata["maintainer_email"],
+    description=metadata["__description__"],
+    download_url=metadata["download_url"],
     entry_points={
         "console_scripts": [
             "deploymessage =deploy_message.cli:main"
