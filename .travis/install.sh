@@ -3,5 +3,5 @@
 set -e
 set -x
 
-python -m pip install tox
+python -m pip install tox wheel
 python setup.py install
