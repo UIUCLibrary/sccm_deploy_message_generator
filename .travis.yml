@@ -7,7 +7,7 @@ script:
   - "./.travis/run.sh"
 deploy:
   provider: releases
-  api-key: $GITHUB_OAUTH_TOKEN
+  api_key: $GITHUB_OAUTH_TOKEN
   skip_cleanup: true
   on:
     repo: UIUCLibrary/sccm_deploy_message_generator
