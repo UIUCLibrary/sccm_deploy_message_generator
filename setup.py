@@ -26,6 +26,9 @@ setup(
         "console_scripts": [
             "deploymessage =deploy_message.__main__:main"
         ]
-    }
+    },
+    test_suite="tests",
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
 
 )
