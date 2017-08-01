@@ -24,7 +24,7 @@ setup(
     download_url=metadata["download_url"],
     entry_points={
         "console_scripts": [
-            "deploymessage =deploy_message.cli:main"
+            "deploymessage =deploy_message.__main__:main"
         ]
     }
 
