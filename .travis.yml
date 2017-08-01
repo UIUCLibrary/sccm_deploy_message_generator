@@ -5,3 +5,9 @@ install:
   - "./.travis/install.sh"
 script:
   - "./.travis/run.sh"
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true
