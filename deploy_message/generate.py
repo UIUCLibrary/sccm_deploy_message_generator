@@ -1,6 +1,8 @@
 import sys
 from jinja2 import Template
 import yaml
+import warnings
+import deploy_message
 
 class MessageData:
     template = """Dear {{ receiver_name }},
@@ -34,6 +36,7 @@ Thank you for your time.
 
 
 def generate_message(message: MessageData):
+    warnings.warn("generate_body() instead.", DeprecationWarning)
     template = Template(message.template)
 
     return template.render(
@@ -45,6 +48,32 @@ def generate_message(message: MessageData):
         maintainer_email=message.maintainer_email
     )
 
+
+def generate_body(message: MessageData):
+    template = Template(message.template)
+
+    return template.render(
+        receiver_name=message.receiver_name,
+        package_filename=message.package_filename,
+        package_path=message.package_path,
+        host_names=message.deployment_hostnames,
+        maintainer_name=message.maintainer_name,
+        maintainer_email=message.maintainer_email
+    )
+
+
+def get_footer():
+    template_message = """Message generated using {{ title }} version {{ version }}.
+({{ url }})
+
+"""
+    template = Template(template_message)
+
+    return template.render(
+        title = deploy_message.__title__,
+        version = deploy_message.__version__,
+        url= deploy_message.__url__
+    )
 
 def get_message_data(yml_file)->MessageData:
     with open(yml_file, "r") as f:
