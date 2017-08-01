@@ -10,7 +10,8 @@ deploy:
   overwrite: true
   api_key:
     secure: qWcMxisUuhN+n1nqeyrS6wf3/f7tD/DprKJjhGkgSaiXcFKPVzZxYa6Oy+iwSrJt68RHydz22x67t2uHuItOjI6I0hrqfSIGXwiCvycy4Wy5VUb6XocE9TaWypmEww4cZEFcAiwD4W1bspDT8ggmCJvHIOu8iheb7QQltrw1M1pO7oUwpznHBTlDYaoqocdDeRsle+24znwGloLr0faUuE+xBsQXiLG+SGvcD+ucMUH1gTqBOfSKR21l9OHfkRzcgRLTPoZv3kHQx28tSx/aVjUtxP/90sKTK8NB0CYunz4cjc5964RoD6tpDRPRO8nHVE4fDl2IFPSzGZ/dY0fCETbfzstYqRT/CsKXUwENOU/lcxMSiABcyWUb3WIo5TTxortlYcTRPGjnYj9SmE3aw///NPvUOVcohN0msCBUI1Dydw2bybnmgdXYfXTmd2rtuUve4vxQJCV3kt4eS+SbhYS/XQSgqrk2LU3bUsnqYGQ7w9uuaEoTCtO3gHZ5BVyHWvhxBJzM80WO9LJudPop+tzpcFE9QvGgSG7jS8B6W0BKs3zMEATsaJuTKHGV5ac/6WRKEgwLT10eHMsApgGeGoAa/o2YEI3lk2LEaQt4WEho2FnGUUhZhGYBphS7yBrYhDZp9b3rXTCfxffJk4jWLeqX2iz7AR3VcuJL4AQNEX4=
-  file_glob: true
   file: dist/*.whl
+  file_glob: true
   on:
     repo: UIUCLibrary/sccm_deploy_message_generator
+  skip_cleanup: true
