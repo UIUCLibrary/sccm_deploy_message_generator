@@ -8,6 +8,7 @@ class MessageData:
 A new install package is ready for SCCM deployment.
 
 Filename: {{ package_filename }}
+
 Location: {{ package_path }}
 
 
