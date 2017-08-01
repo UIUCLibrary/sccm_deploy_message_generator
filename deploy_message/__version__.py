@@ -1,5 +1,5 @@
 __title__ = 'deploy_message'
-__version__ = '0.0.2'
+__version__ = '0.1.0'
 __url__ = 'https://github.com/UIUCLibrary/sccm_deploy_message_generator'
 __author__ = 'University of Illinois at Urbana Champaign'
 __author_email__ = 'hborcher@illinois.edu'
